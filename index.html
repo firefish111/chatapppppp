@@ -58,10 +58,8 @@
         }
         $('#messages').scrollTop($('#messages').height());
       });
-      socket.on('connected', function(){
-      });
       socket.on('sign in', function (username){
-        $('#messages').append("<b>" + username + "</b> has joined the chat.<br><hr>");
+        /* $('#messages').append("<b>" + username + "</b> has joined the chat.<br><hr>"); */
         $('#messages').scrollTop($('#messages').height());
       });
     });
