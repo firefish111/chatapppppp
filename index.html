@@ -50,13 +50,13 @@
         socket.emit('sign in', use);
       })
       socket.on('chat message', function(msg, use){
-        var usrname = $('#sign_in_input').val();
-        var chatinput = $('#chat_input').val();
-        if (use !== '') {
+        if ((use !== '') && (msg !== '')) {
           $('#messages').append("<b>" + use + "</b>: " + msg + "<br><hr>");
-          $('#messages').scrollTop($('#messages').height());
-          $('#chat_input').val('');
+          if (use == $('#sign_in_input').val()) {
+            $('#chat_input').val('');
+          }
         }
+        $('#messages').scrollTop($('#messages').height());
       });
       socket.on('connected', function(){
       });
