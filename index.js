@@ -11,8 +11,8 @@ io.on('connection', function(socket){
   console.log('A user connected');
 });
 
-http.listen(8080, function(){
-  console.log('listening on *:3000');
+http.listen(port, function(){
+  console.log('listening on ?');
 });
 io.on('connection', function(socket){
 	io.emit('connected');
