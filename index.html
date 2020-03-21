@@ -59,7 +59,9 @@
         $('#messages').scrollTop($('#messages').height());
       });
       socket.on('sign in', function (username){
-        /* $('#messages').append("<b>" + username + "</b> has joined the chat.<br><hr>"); */
+        if (username == $('#sign_in_input').val()) {
+          $('#messages').append("[Chat Manager] You have set your username to <b>" + username + "</b>.<br><hr>");
+        }
         $('#messages').scrollTop($('#messages').height());
       });
     });
