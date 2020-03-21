@@ -48,7 +48,7 @@
         console.log('Username set');
         var use = $('#sign_in_input').val();
         socket.emit('sign in', use);
-      })
+      });
       socket.on('chat message', function(msg, use){
         if ((use !== '') && (msg !== '')) {
           $('#messages').append("<b>" + use + "</b>: " + msg + "<br><hr>");
