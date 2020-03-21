@@ -62,7 +62,7 @@
         $('#messages').append("A user has connected.<br>");
       });
       socket.on('sign in', function (username){
-        $('#messages').append($('#sign_in_input').val() + " has joined the chat.<br>");
+        $('#messages').append(username + " has joined the chat.<br>");
       });
     });
     </script>
