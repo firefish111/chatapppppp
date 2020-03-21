@@ -26,7 +26,7 @@
   <body style="background:grey">
     <div id="messages" style="line-height:3; font-size:15px; overflow-y:scroll;position:fixed; bottom:10%; width:100%;height:calc(100% - 80px); border-radius:20px; border:1px solid silver; font-family: Montserrat; padding: 15px; background:rgb(219, 219, 219)" />
     <form id="chat_form" action="">
-      <input id="chat_input" placeholder="Type your message here" autocomplete="off" /><button id="chat_button">Send</button>
+      <input id="chat_input" placeholder="Type your message here after setting your username" autocomplete="off" /><button id="chat_button">Send</button>
     </form>
     <form id = "sign_in_form" action="">
       <input id="sign_in_input" placeholder="Type your username" id="sign_in_form" style="border:none; font-size:12px; padding-left:30px">
@@ -59,10 +59,9 @@
         }
       });
       socket.on('connected', function(){
-        $('#messages').append("A user has connected.<br>");
       });
       socket.on('sign in', function (username){
-        $('#messages').append(username + " has joined the chat.<br>");
+        $('#messages').append("<b>" + username + "</b> has joined the chat.<br><hr>");
       });
     });
     </script>
