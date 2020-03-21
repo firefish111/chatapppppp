@@ -8,17 +8,17 @@
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
       hr {border:0.5px solid rgb(180, 180, 180)}
-      #chat_form { background: grey; padding: 3px; position: fixed; bottom: 2%; width: 100%; border: 3px solid grey; border-radius: 20px; right:0px}
+      #chat_form { background: grey; padding: 3px; position: fixed; bottom: 0.5%; width: 75%; border: 3px solid grey; border-radius: 20px; right:0px}
       #chat_input { border-radius: 20px; border: silver solid 1px; padding: 10px; width: 90%; margin-right: .5%; }
       #chat_input:focus { outline: none}
       #chat_button { width: 9%; background: blue; border: none; padding: 10px; border-radius: 20px; transition: background 0.5s;}
       #chat_button:hover { width: 9%; background: darkblue; border: none; padding: 10px; border-radius: 20px;}
       #chat_button:focus { outline: none;}
       #sign_in_background {position:fixed; left:0%; top:0%; width:100%; height:100%; background: silver}
-      #sign_in_input {position:fixed; width:50%; height:25%; left:25%; top:37.5%; border-radius:100px; background:white}
+      #sign_in_input {position:fixed; width:17%; height:5%; bottom:1.8%; border-radius:100px; background:white}
       #sign_in_input:focus {outline:none}
-      #play_button {font-size:20px; position:fixed; left:25%; top:65%; height:15%; width: 50%; background: blue; border: none; padding: 10px; border-radius: 100px; transition: background 0.5s;}
-      #play_button:hover {font-size:20px; position:fixed; left:25%; top:65%; height:15%; width: 50%; background: darkblue; border: none; padding: 10px; border-radius: 100px; transition: background 0.5s;}
+      #play_button {font-size:15px; position:fixed; left:18.7%; bottom:1.8%; height:5%; width: 5%; background: blue; border: none; padding: 10px; border-radius: 100px; transition: background 0.5s;}
+      #play_button:hover {background: darkblue}
       #play_button:focus {outline:none}
       
     </style>
@@ -26,12 +26,11 @@
   <body style="background:grey">
     <div id="messages" style="line-height:3; font-size:15px; overflow-y:scroll;position:fixed; bottom:10%; width:100%;height:calc(100% - 80px); border-radius:20px; border:1px solid silver; font-family: Montserrat; padding: 15px; background:rgb(219, 219, 219)" />
     <form id="chat_form" action="">
-      <input id="chat_input" autocomplete="off" /><button id="chat_button">Send</button>
+      <input id="chat_input" placeholder="Type your message here" autocomplete="off" /><button id="chat_button">Send</button>
     </form>
-    <div id="sign_in_background" />
     <form id = "sign_in_form" action="">
-      <input id="sign_in_input" placeholder="Type your username" id="sign_in_form" style="border:none; font-size:50px; padding-left:30px">
-      <button id = "play_button">Play</button>
+      <input id="sign_in_input" placeholder="Type your username" id="sign_in_form" style="border:none; font-size:12px; padding-left:30px">
+      <button id = "play_button">Set</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
@@ -63,7 +62,7 @@
         $('#messages').append("A user has connected.<br>");
       });
       socket.on('sign in', function (username){
-        $('#sign_in_background').hide();
+        $('#messages').append($('#sign_in_input').val() + " has joined the chat.<br>");
       });
     });
     </script>
