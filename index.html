@@ -15,7 +15,7 @@
       #chat_button:hover { width: 9%; background: darkblue; border: none; padding: 10px; border-radius: 20px;}
       #chat_button:focus { outline: none;}
       #sign_in_background {position:fixed; left:0%; top:0%; width:100%; height:100%; background: silver}
-      #sign_in_input {position:fixed; width:17%; height:5%; bottom:1.8%; border-radius:100px; background:white}
+      #sign_in_input {position:fixed; width:17%; height:5%; bottom:1.8%; border-radius:100px; background:white; left:1%}
       #sign_in_input:focus {outline:none}
       #play_button {font-size:15px; position:fixed; left:18.7%; bottom:1.8%; height:5%; width: 5%; background: blue; border: none; padding: 10px; border-radius: 100px; transition: background 0.5s;}
       #play_button:hover {background: darkblue}
@@ -24,7 +24,7 @@
     </style>
   </head>
   <body style="background:grey">
-    <div id="messages" style="line-height:3; font-size:15px; overflow-y:scroll;position:fixed; bottom:10%; width:100%;height:calc(100% - 80px); border-radius:20px; border:1px solid silver; font-family: Montserrat; padding: 15px; background:rgb(219, 219, 219)" />
+    <div id="messages" style="line-height:3; font-size:15px; overflow-y:scroll;position:fixed; bottom:10%; width:100%;height:calc(100% - 80px); border-radius:20px; border:20px solid rgb(219, 219, 219); font-family: Montserrat; padding: 15px; background:rgb(219, 219, 219)" />
     <form id="chat_form" action="">
       <input id="chat_input" placeholder="Type your message here after setting your username" autocomplete="off" /><button id="chat_button">Send</button>
     </form>
