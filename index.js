@@ -16,13 +16,13 @@ http.listen(port, function(){
 });
 io.on('connection', function(socket){
 	io.emit('connected');
-	socket.on('chat message', function(msg, user){
-		io.emit('chat message', msg, user);
+	socket.on('chat message', function(msg, user, img){
+		io.emit('chat message', msg, user, img);
 		console.log(user + ': ' + msg);
 	});
 	socket.on('sign in', function(username){
 		if ((username.search(' ') == -1) && (username !== "")) {
 			io.emit('sign in', username);
 		}
-	})
+	});
 });
