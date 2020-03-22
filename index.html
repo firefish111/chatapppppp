@@ -32,18 +32,18 @@
       #spacer {width:15px}
       #message {display: flex; background: rgb(26, 65, 97); border-radius: 200px;padding: 10px; padding-left:20px; width:100%;}
       #message:hover {background:rgb(21, 52, 77)}
-      #chat_form { z-index:2;height:5%; background:rgb(20, 34, 47); position: fixed; bottom: 1.825%; width: 57%; right:2.5%;}
+      #chat_form { z-index:2;height:5%; background:rgb(20, 34, 47); position: fixed; bottom: 5%; width: 57%; right:2.5%;}
       #chat_input { border-bottom-left-radius: 10px; border-top-left-radius: 10px; border:none; padding: 10px; padding-left:15px; width: 85%; height:100%; margin-right:-5%;}
       #chat_input:focus { outline: none}
-      #chat_button { width: 7%; background: blue; border: none; padding: 10px; border-bottom-right-radius: 10px; border-top-right-radius: 10px; transition: background 0.5s; height:100%}
+      #chat_button {position:absolute; word-wrap:none; width: 7%; background: blue; border: none; padding: 10px; border-bottom-right-radius: 10px; border-top-right-radius: 10px; transition: background 0.5s; top:0px;height:100%}
       #chat_button:hover { background: darkblue}
       #chat_button:focus { outline: none;}
-      #sign_in_input {position:fixed; width:17%; height:5%; bottom:1.8%; border-radius:10px; background:white; left:10%}
+      #sign_in_input {position:fixed; width:17%; height:5%; bottom:5%; border-radius:10px; background:white; left:10%}
       #sign_in_input:focus {outline:none}
-      #play_button {z-index:1;font-size:12px; position:fixed; left:23%; bottom:1.8%; height:5%; width: 7%; background: blue; border: none; padding: 10px; border-bottom-right-radius: 0px; border-top-right-radius: 0px; transition: background 0.5s;}
+      #play_button {z-index:1;font-size:12px; position:static; left:23%; bottom:1.8%; height:5%; width: 7%; background: blue; border: none; padding: 10px; border-bottom-right-radius: 0px; border-top-right-radius: 0px; transition: background 0.5s;}
       #play_button:hover {background: darkblue}
       #play_button:focus {outline:none}
-      #image_input {position:fixed; width:15%; height:5%; bottom:1.8%; border-radius:10px; background:white; left:24%}
+      #image_input {position:fixed; width:15%; height:5%; bottom:5%; border-radius:10px; background:white; left:24%}
       #image_input:focus {outline:none}
       
     </style>
@@ -51,7 +51,8 @@
   <body style="background:rgb(20, 34, 47)">
     <div id="messages" style="color:cyan; word-wrap: break-word; line-height:1.5; font-size:15px; overflow-y:scroll;position:fixed; bottom:10%; width:80%;height:calc(100% - 80px); border-radius:10px; border:20px solid rgb(21, 52, 77); font-family: Montserrat; padding: 15px; left:10%; background:rgb(21, 52, 77)" />
     <form id="chat_form" action="">
-      <input id="chat_input" placeholder="Type your message here after setting your username" autocomplete="off" /><button id="chat_button">Send</button>
+      <input id="chat_input" placeholder="Type your message here after setting your username" autocomplete="off" />
+      <button id="chat_button">Send</button>
     </form>
     <form id = "sign_in_form" action="">
       <input id="sign_in_input" placeholder="Type your username" style="border:none; font-size:12px; padding-left:30px">
